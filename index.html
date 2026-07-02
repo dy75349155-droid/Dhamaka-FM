@@ -3,20 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Radio Damroo - Etawah Ka Apna Premium Radio</title>
+    <title>89.6 Dhamaka FM - Har Dhadkan Mein Dhamaka!</title>
     <!-- FontAwesome Icons for clean premium look -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* --- DESIGN SYSTEM (Red, Yellow & Deep Dark Black Theme) --- */
+        /* --- DESIGN SYSTEM (Electric Purple, Cyan Blue & Deep Carbon Black Theme) --- */
         :root {
-            --primary-red: #ff1e27;
-            --primary-yellow: #ffcc00;
-            --bg-black: #050505;
-            --card-black: #121212;
+            --primary-violet: #8b5cf6;
+            --primary-magenta: #ec4899;
+            --accent-gold: #fbbf24;
+            --bg-black: #06040a;
+            --card-black: #0f0d1a;
             --text-white: #ffffff;
-            --text-gray: #b0b0b0;
-            --glow-red: rgba(255, 30, 39, 0.4);
-            --glow-yellow: rgba(255, 204, 0, 0.3);
+            --text-gray: #a78bfa;
+            --glow-violet: rgba(139, 92, 246, 0.4);
+            --glow-magenta: rgba(236, 72, 153, 0.3);
         }
 
         * {
@@ -28,9 +29,11 @@
 
         body {
             background-color: var(--bg-black);
+            background-image: radial-gradient(circle at top, #1e1135 0%, #06040a 100%);
             color: var(--text-white);
             scroll-behavior: smooth;
             overflow-x: hidden;
+            min-height: 100vh;
         }
 
         /* --- Custom Premium Scrollbar --- */
@@ -41,22 +44,22 @@
             background: var(--bg-black);
         }
         ::-webkit-scrollbar-thumb {
-            background: var(--primary-red);
+            background: var(--primary-violet);
             border-radius: 4px;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: var(--primary-yellow);
+            background: var(--primary-magenta);
         }
 
         /* --- Header & Responsive Navigation --- */
         header {
-            background: rgba(10, 10, 10, 0.95);
+            background: rgba(10, 8, 18, 0.95);
             backdrop-filter: blur(10px);
             position: sticky;
             top: 0;
             z-index: 1000;
-            border-bottom: 2px solid var(--primary-red);
-            box-shadow: 0 4px 15px var(--glow-red);
+            border-bottom: 2px solid var(--primary-violet);
+            box-shadow: 0 4px 20px var(--glow-violet);
         }
 
         .nav-container {
@@ -74,6 +77,17 @@
             align-items: center;
             text-decoration: none;
             cursor: pointer;
+            gap: 10px;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            background: linear-gradient(to right, var(--primary-magenta), var(--accent-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 15px rgba(236, 72, 153, 0.4);
         }
 
         /* Logo Image Style */
@@ -102,14 +116,14 @@
             font-weight: 600;
             font-size: 13px;
             transition: all 0.3s ease;
-            padding: 6px 10px;
-            border-radius: 4px;
+            padding: 6px 12px;
+            border-radius: 6px;
         }
 
         nav ul li a:hover, nav ul li a.active {
-            color: var(--primary-yellow);
-            background: rgba(255, 30, 39, 0.15);
-            border-bottom: 2px solid var(--primary-yellow);
+            color: var(--accent-gold);
+            background: rgba(139, 92, 246, 0.15);
+            border-bottom: 2px solid var(--accent-gold);
         }
 
         /* Responsive menu for Mobile screens */
@@ -155,10 +169,10 @@
 
         .player-info-card {
             background: var(--card-black);
-            border: 2px solid var(--primary-red);
-            border-radius: 16px;
+            border: 2px solid var(--primary-violet);
+            border-radius: 20px;
             padding: 25px;
-            box-shadow: 0 8px 30px var(--glow-red);
+            box-shadow: 0 8px 30px var(--glow-violet);
             position: relative;
             overflow: hidden;
             display: flex;
@@ -172,9 +186,9 @@
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            background: var(--primary-red);
+            background: linear-gradient(135deg, var(--primary-magenta), #c026d3);
             color: white;
-            padding: 5px 12px;
+            padding: 6px 14px;
             border-radius: 20px;
             font-weight: bold;
             font-size: 11px;
@@ -186,7 +200,7 @@
 
         /* Style when station is offline */
         .live-badge.offline-badge {
-            background: #444;
+            background: #333;
             animation: none;
             box-shadow: none;
         }
@@ -194,9 +208,9 @@
         #current-show-title {
             font-size: 32px;
             font-weight: 800;
-            color: var(--primary-yellow);
+            color: var(--accent-gold);
             margin-bottom: 8px;
-            text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+            text-shadow: 0 2px 10px rgba(0,0,0,0.7);
         }
 
         #current-rj-name {
@@ -210,11 +224,11 @@
         }
 
         #current-rj-name i {
-            color: var(--primary-red);
+            color: var(--primary-magenta);
         }
 
         #current-show-description {
-            color: var(--text-gray);
+            color: #d8b4fe;
             font-size: 14px;
             line-height: 1.6;
             max-width: 600px;
@@ -234,7 +248,7 @@
         .wave-bar {
             width: 5px;
             height: 6px;
-            background: linear-gradient(to top, var(--primary-red), var(--primary-yellow));
+            background: linear-gradient(to top, var(--primary-magenta), var(--accent-gold));
             border-radius: 3px;
             animation: wave-movement 1s ease-in-out infinite alternate;
         }
@@ -261,10 +275,10 @@
         /* --- Caster.fm Embed Container --- */
         .caster-player-card {
             background: var(--card-black);
-            border: 2px solid var(--primary-yellow);
-            border-radius: 16px;
+            border: 2px solid var(--primary-magenta);
+            border-radius: 20px;
             padding: 20px;
-            box-shadow: 0 8px 30px var(--glow-yellow);
+            box-shadow: 0 8px 30px var(--glow-magenta);
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -274,7 +288,7 @@
         }
 
         .caster-player-card h3 {
-            color: var(--primary-yellow);
+            color: var(--accent-gold);
             font-size: 16px;
             margin-bottom: 15px;
             text-transform: uppercase;
@@ -290,11 +304,11 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            border-radius: 8px;
+            border-radius: 12px;
             overflow: hidden;
-            background: rgba(0, 0, 0, 0.4);
-            padding: 15px 10px;
-            border: 1px dashed rgba(255, 204, 0, 0.3);
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px 10px;
+            border: 1px dashed rgba(236, 72, 153, 0.3);
             min-height: 120px;
             position: relative;
         }
@@ -310,7 +324,7 @@
         }
 
         .caster-embed-area a {
-            color: var(--primary-yellow);
+            color: var(--primary-magenta);
             text-decoration: none;
             font-size: 12px;
             display: inline-block;
@@ -321,7 +335,7 @@
         .section-title {
             text-align: center;
             font-size: 28px;
-            color: var(--primary-yellow);
+            color: var(--accent-gold);
             margin: 45px 0 25px;
             position: relative;
             text-transform: uppercase;
@@ -333,7 +347,7 @@
             display: block;
             width: 60px;
             height: 3px;
-            background: var(--primary-red);
+            background: var(--primary-violet);
             margin: 8px auto 0;
             border-radius: 2px;
         }
@@ -348,7 +362,7 @@
         /* --- About Card --- */
         .about-box {
             background: var(--card-black);
-            border-left: 4px solid var(--primary-red);
+            border-left: 4px solid var(--primary-magenta);
             border-radius: 12px;
             padding: 25px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.3);
@@ -356,61 +370,197 @@
         }
 
         .about-box p {
-            color: var(--text-gray);
+            color: #d8b4fe;
             font-size: 15px;
             margin-bottom: 12px;
         }
 
-        /* --- Shows Section --- */
+        /* --- Shows Section Upgraded with Host Photos --- */
         .show-card {
             background: var(--card-black);
             border: 1px solid rgba(255,255,255,0.05);
-            border-radius: 12px;
-            padding: 20px;
+            border-radius: 16px;
+            padding: 25px 20px;
             text-align: center;
             transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .show-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-violet), var(--primary-magenta));
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
 
         .show-card:hover {
             transform: translateY(-5px);
-            border-color: var(--primary-yellow);
-            box-shadow: 0 4px 15px var(--glow-yellow);
+            border-color: var(--accent-gold);
+            box-shadow: 0 8px 25px var(--glow-violet);
         }
 
-        .show-icon {
-            width: 55px;
-            height: 55px;
-            background: rgba(255, 30, 39, 0.1);
-            border: 2px solid var(--primary-red);
-            color: var(--primary-red);
+        .show-card:hover::before {
+            opacity: 1;
+        }
+
+        /* Premium Team / Host Photo Container */
+        .host-photo-container {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 15px;
+            position: relative;
+            border-radius: 50%;
+            padding: 4px;
+            background: linear-gradient(135deg, var(--primary-violet), var(--primary-magenta));
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        .host-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 2px solid var(--card-black);
+            display: block;
+        }
+
+        /* Badge overlay showing show category icon */
+        .host-badge-icon {
+            position: absolute;
+            bottom: 2px;
+            right: 2px;
+            width: 30px;
+            height: 30px;
+            background: var(--accent-gold);
+            color: var(--bg-black);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 22px;
-            margin: 0 auto 12px;
+            font-size: 13px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+            border: 2px solid var(--card-black);
         }
 
         .show-card h3 {
             font-size: 18px;
             margin-bottom: 6px;
             color: var(--text-white);
+            font-weight: 700;
         }
 
         .show-rj {
-            color: var(--primary-yellow);
+            color: var(--accent-gold);
             font-size: 14px;
             font-weight: 600;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
         }
 
         .show-time {
             font-size: 12px;
-            color: var(--text-gray);
-            background: rgba(255,255,255,0.05);
-            padding: 3px 10px;
+            color: #c084fc;
+            background: rgba(139, 92, 246, 0.1);
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            padding: 4px 12px;
             border-radius: 15px;
             display: inline-block;
+            font-weight: 500;
+        }
+
+        /* --- Team Cards Special Styles --- */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .team-card {
+            background: linear-gradient(145deg, #120e24, #0b0914);
+            border: 1px solid rgba(139, 92, 246, 0.15);
+            border-radius: 20px;
+            padding: 30px 20px;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .team-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary-magenta);
+            box-shadow: 0 10px 30px var(--glow-violet);
+        }
+
+        .team-photo-wrapper {
+            width: 110px;
+            height: 110px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            padding: 3px;
+            background: linear-gradient(to right, var(--accent-gold), var(--primary-magenta));
+            box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+        }
+
+        .team-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid #0f0d1a;
+        }
+
+        .team-name {
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--text-white);
+            letter-spacing: 0.5px;
+        }
+
+        .team-role {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--accent-gold);
+            text-transform: uppercase;
+            margin: 4px 0 12px;
+            letter-spacing: 1.5px;
+        }
+
+        .team-bio {
+            font-size: 13px;
+            color: #d8b4fe;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+
+        .team-socials {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .team-socials a {
+            color: #a78bfa;
+            font-size: 18px;
+            transition: color 0.3s;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background: rgba(139, 92, 246, 0.1);
+            border-radius: 50%;
+        }
+
+        .team-socials a:hover {
+            color: var(--primary-magenta);
+            background: rgba(139, 92, 246, 0.2);
+            box-shadow: 0 0 10px var(--glow-violet);
         }
 
         /* --- Schedule Section --- */
@@ -424,7 +574,7 @@
         .schedule-row {
             display: grid;
             grid-template-columns: 140px 1.2fr 1fr 100px;
-            padding: 12px 15px;
+            padding: 14px 15px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.04);
             align-items: center;
             border-radius: 8px;
@@ -440,19 +590,19 @@
         }
 
         .schedule-row.active {
-            background: rgba(255, 192, 0, 0.1);
-            border-left: 4px solid var(--primary-yellow);
+            background: rgba(139, 92, 246, 0.15);
+            border-left: 4px solid var(--primary-magenta);
         }
 
         /* Styling for offline table row */
         .schedule-row.active.offline-row {
             background: rgba(255, 255, 255, 0.03);
-            border-left-color: #666;
+            border-left-color: #555;
         }
 
         .schedule-time {
             font-size: 13px;
-            color: var(--text-gray);
+            color: #c084fc;
             font-weight: 500;
         }
 
@@ -462,13 +612,13 @@
         }
 
         .schedule-rj {
-            color: var(--primary-yellow);
+            color: var(--accent-gold);
             font-size: 14px;
         }
 
         /* For offline RJ display */
         .offline-row .schedule-rj {
-            color: #888;
+            color: #777;
         }
 
         .schedule-status {
@@ -478,11 +628,11 @@
             border-radius: 20px;
             text-align: center;
             background: #222;
-            color: #777;
+            color: #666;
         }
 
         .schedule-row.active .schedule-status {
-            background: var(--primary-red);
+            background: var(--primary-magenta);
             color: white;
             animation: pulse-border 1.5s infinite;
         }
@@ -490,7 +640,7 @@
         /* Offline status display in table */
         .schedule-row.active.offline-row .schedule-status {
             background: #333;
-            color: #aaa;
+            color: #888;
             animation: none;
         }
 
@@ -521,15 +671,15 @@
         .input-group label {
             display: block;
             font-size: 13px;
-            color: var(--text-gray);
+            color: #c084fc;
             margin-bottom: 5px;
         }
 
         .input-group input, .input-group textarea {
             width: 100%;
             padding: 10px;
-            background: #1c1c1c;
-            border: 1px solid #333;
+            background: #0d0b14;
+            border: 1px solid #2e2640;
             color: white;
             border-radius: 6px;
             outline: none;
@@ -537,12 +687,12 @@
         }
 
         .input-group input:focus, .input-group textarea:focus {
-            border-color: var(--primary-red);
-            box-shadow: 0 0 8px var(--glow-red);
+            border-color: var(--primary-magenta);
+            box-shadow: 0 0 8px var(--glow-magenta);
         }
 
         .submit-btn {
-            background: linear-gradient(135deg, var(--primary-red), #e01b22);
+            background: linear-gradient(135deg, var(--primary-magenta), var(--primary-violet));
             color: white;
             font-weight: bold;
             border: none;
@@ -554,7 +704,7 @@
         }
 
         .submit-btn:hover {
-            background: var(--primary-yellow);
+            background: var(--accent-gold);
             color: var(--bg-black);
         }
 
@@ -570,20 +720,20 @@
         .comment-item {
             background: rgba(255,255,255,0.02);
             padding: 10px 12px;
-            border-left: 3px solid var(--primary-yellow);
+            border-left: 3px solid var(--accent-gold);
             margin-bottom: 10px;
             border-radius: 0 6px 6px 0;
         }
 
         .comment-user {
-            color: var(--primary-yellow);
+            color: var(--accent-gold);
             font-weight: bold;
             font-size: 13px;
         }
 
         .comment-time {
             font-size: 10px;
-            color: var(--text-gray);
+            color: #a78bfa;
             float: right;
         }
 
@@ -595,30 +745,30 @@
 
         /* --- Footer --- */
         footer {
-            background: #000000;
-            border-top: 2px solid var(--primary-yellow);
+            background: #040307;
+            border-top: 2px solid var(--primary-violet);
             padding: 20px;
             text-align: center;
             font-size: 12px;
-            color: var(--text-gray);
+            color: #a78bfa;
             margin-top: 40px;
         }
 
         footer span {
-            color: var(--primary-yellow);
+            color: var(--accent-gold);
             font-weight: bold;
         }
 
         /* --- Simple Animations --- */
         @keyframes pulse-icon {
             0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.1); color: var(--primary-red); }
+            50% { transform: scale(1.1); color: var(--primary-magenta); }
         }
 
         @keyframes pulse-border {
-            0% { box-shadow: 0 0 0 0 rgba(255, 30, 39, 0.6); }
-            70% { box-shadow: 0 0 0 8px rgba(255, 30, 39, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(255, 30, 39, 0); }
+            0% { box-shadow: 0 0 0 0 rgba(236, 72, 153, 0.6); }
+            70% { box-shadow: 0 0 0 8px rgba(236, 72, 153, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(236, 72, 153, 0); }
         }
     </style>
 </head>
@@ -628,7 +778,8 @@
     <header>
         <div class="nav-container">
             <a href="#" class="logo">
-                <img src="logo.png" alt="Radio Damroo" class="logo-img" onerror="this.onerror=null; this.src='https://placehold.co/150x50/121212/ffcc00?text=Radio+Damroo';">
+                <img src="logo.png" alt="Dhamaka FM Logo" class="logo-img" onerror="this.style.display='none'; document.getElementById('logo-text-id').style.display='block';">
+                <span class="logo-text" id="logo-text-id" style="display:none;">DHAMAKA FM</span>
             </a>
             <nav>
                 <ul>
@@ -636,6 +787,7 @@
                     <li><a href="#about">About</a></li>
                     <li><a href="#shows">Shows</a></li>
                     <li><a href="#schedule">Schedule</a></li>
+                    <li><a href="#team">Our Team</a></li>
                     <li><a href="#comments">Comments</a></li>
                 </ul>
             </nav>
@@ -647,7 +799,7 @@
         <!-- Hero & Dual Player Layout -->
         <section id="home" class="player-wrapper">
             
-            <!-- Show Details (Dynamic Real-Time RJ & Show Info based on User Device Local Time) -->
+            <!-- Show Details (Dynamic Real-Time Host & Show Info based on User Device Local Time) -->
             <div class="player-info-card">
                 <div class="live-badge" id="live-indicator-badge">
                     <i class="fa-solid fa-circle"></i> Live Now
@@ -656,11 +808,11 @@
                 <h1 id="current-show-title">Loading Active Show...</h1>
                 
                 <div id="current-rj-name">
-                    <i class="fa-solid fa-microphone-lines"></i> <span>Loading RJ...</span>
+                    <i class="fa-solid fa-microphone-lines"></i> <span>Loading Host...</span>
                 </div>
 
                 <p id="current-show-description">
-                    Radio Damroo live details are updating. Stay tuned for Etawah's finest music and radio host experience!
+                    Dhamaka FM live details are updating. Stay tuned for the ultimate hits and awesome hosting experiences!
                 </p>
 
                 <!-- Premium Audio Visualizer waves -->
@@ -680,13 +832,13 @@
 
             <!-- Caster.fm Official Player Card Container with Embedded Code -->
             <div class="caster-player-card">
-                <h3><i class="fa-solid fa-circle-play"></i> Caster.fm Player</h3>
+                <h3><i class="fa-solid fa-circle-play animate-bounce"></i> Play Dhamaka FM</h3>
                 
                 <div class="caster-embed-area" id="caster-container">
                     <!-- =================================================================================== -->
                     <!-- !!! INTEGRATED OFFICIAL CASTER.FM EMBED WIDGET !!! -->
                     <!-- =================================================================================== -->
-                    <div data-type="newStreamPlayer" data-publicToken="a8bf4b8e-212c-44ad-bc0c-bfa56c04a2a1" data-theme="dark" data-color="e81e4d" data-channelId="a221638d-ec79-4ca5-94cf-ec8a17ae18ae" data-rendered="false" class="cstrEmbed">
+                    <div data-type="newStreamPlayer" data-publicToken="a8bf4b8e-212c-44ad-bc0c-bfa56c04a2a1" data-theme="dark" data-color="8b5cf6" data-channelId="a221638d-ec79-4ca5-94cf-ec8a17ae18ae" data-rendered="false" class="cstrEmbed">
                         <a href="https://www.caster.fm">Shoutcast Hosting</a> 
                         <a href="https://www.caster.fm">Stream Hosting</a> 
                         <a href="https://www.caster.fm">Radio Server Hosting</a>
@@ -695,8 +847,8 @@
                     <!-- =================================================================================== -->
                 </div>
                 
-                <p style="font-size: 11px; color: var(--text-gray); margin-top: 15px; line-height: 1.4;">
-                    ऊपर दिए गए प्ले बटन पर क्लिक करें और बिना किसी सेशन एक्सपायरी के निर्बाध रेडियो स्ट्रीमिंग का आनंद लें।
+                <p style="font-size: 11px; color: #a78bfa; margin-top: 15px; line-height: 1.4;">
+                    Upar diye gaye play button par click karein aur bina kisi interruption ke non-stop music ka anand lein.
                 </p>
             </div>
 
@@ -704,79 +856,66 @@
 
         <!-- About Us Section -->
         <section id="about">
-            <h2 class="section-title">About Radio Damroo</h2>
+            <h2 class="section-title">About Dhamaka FM</h2>
             <div class="about-box">
-                <p><strong>Radio Damroo</strong> is the finest and most popular digital radio station in Etawah city, Uttar Pradesh, India. Our mission is to keep you connected with pure non-stop high-quality music, local happenings, and clean family-friendly entertainment. All of our talented RJs are live with unique show concepts, interactive games, and superhit playlists.</p>
-                <p>Through our advanced web platform and Android applications, we deliver a premium, crystal-clear audio broadcasting experience in digital media. When Damroo plays, the entertainment never stops! Stay tuned for non-stop blasting hits from your favorite local station.</p>
+                <p><strong>Dhamaka FM</strong> is the ultimate and most popular digital radio station designed for premium music lovers. Our mission is to keep you connected with pure non-stop high-quality music, entertaining discussions, and clean family-friendly entertainment. All of our talented hosts and RJs are live with unique show concepts, interactive games, and superhit playlists.</p>
+                <p>Through our advanced web platform and streaming servers, we deliver a premium, crystal-clear audio broadcasting experience. When Dhamaka FM plays, the blast of entertainment never stops! Stay tuned for non-stop blasting hits from your favorite digital station.</p>
             </div>
         </section>
 
-        <!-- Shows Section -->
+        <!-- Shows Section with Host Photos -->
         <section id="shows">
-            <h2 class="section-title">Damroo's Super Hit Shows</h2>
+            <h2 class="section-title">Dhamaka FM Super Hit Shows</h2>
             <div class="grid-layout">
-                <!-- Show 1 -->
+                <!-- Show 1 (Garima) -->
                 <div class="show-card">
-                    <div class="show-icon"><i class="fa-solid fa-cloud-sun"></i></div>
-                    <h3>Waah Re Etawah</h3>
-                    <div class="show-rj">RJ Shouhadra</div>
-                    <div class="show-time">06:30 AM - 11:00 AM (Daily)</div>
+                    <div class="host-photo-container">
+                        <img src="garima.png" alt="Host Garima" class="host-img" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=200&h=200';">
+                        <div class="host-badge-icon"><i class="fa-solid fa-mug-hot"></i></div>
+                    </div>
+                    <h3>Morning Masala</h3>
+                    <div class="show-rj">Host Garima</div>
+                    <div class="show-time">06:00 AM - 10:00 AM (Daily)</div>
                 </div>
-                <!-- Show 2 -->
+                <!-- Show 2 (Harshit) -->
                 <div class="show-card">
-                    <div class="show-icon"><i class="fa-solid fa-award"></i></div>
-                    <h3>The Extraordinary</h3>
-                    <div class="show-rj">RJ Khushbu</div>
-                    <div class="show-time">11:00 AM - 02:00 PM (Mon-Sat)</div>
+                    <div class="host-photo-container">
+                        <img src="harshit.png" alt="Host Harshit" class="host-img" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=200&h=200';">
+                        <div class="host-badge-icon"><i class="fa-solid fa-comments"></i></div>
+                    </div>
+                    <h3>Baklol Talks</h3>
+                    <div class="show-rj">Host Harshit</div>
+                    <div class="show-time">10:00 AM - 02:00 PM (Daily)</div>
                 </div>
-                <!-- Show 3 -->
+                <!-- Show 3 (Devicious) -->
                 <div class="show-card">
-                    <div class="show-icon"><i class="fa-solid fa-users"></i></div>
-                    <h3>Dopheri Adda</h3>
-                    <div class="show-rj">RJ Kapil</div>
-                    <div class="show-time">02:00 PM - 05:00 PM (Mon-Sat)</div>
+                    <div class="host-photo-container">
+                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=200&h=200" alt="Host Devicious" class="host-img" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&q=80&w=200&h=200';">
+                        <div class="host-badge-icon"><i class="fa-solid fa-gamepad"></i></div>
+                    </div>
+                    <h3>Game On Radio</h3>
+                    <div class="show-rj">Host Devicious</div>
+                    <div class="show-time">02:00 PM - 06:00 PM (Daily)</div>
                 </div>
-                <!-- Show 4 -->
+                <!-- Show 4 (Mohini) -->
                 <div class="show-card">
-                    <div class="show-icon"><i class="fa-solid fa-bolt"></i></div>
-                    <h3>Jabardast Evening</h3>
-                    <div class="show-rj">RJ Muskan</div>
-                    <div class="show-time">05:00 PM - 08:00 PM (Mon-Sat)</div>
-                </div>
-                <!-- Show 5 -->
-                <div class="show-card">
-                    <div class="show-icon"><i class="fa-solid fa-mug-hot"></i></div>
-                    <h3>Night Cafe</h3>
-                    <div class="show-rj">RJ Mansi</div>
-                    <div class="show-time">08:00 PM - 11:00 PM (Mon-Fri)</div>
-                </div>
-                <!-- Show 6 (Weekend) -->
-                <div class="show-card">
-                    <div class="show-icon"><i class="fa-solid fa-podcast"></i></div>
-                    <h3>Komal Nahta Podcast</h3>
-                    <div class="show-rj">Komal Nahta</div>
-                    <div class="show-time">11:00 AM - 05:00 PM (Sunday)</div>
-                </div>
-                <!-- Show 7 (Weekend) -->
-                <div class="show-card">
-                    <div class="show-icon"><i class="fa-solid fa-pepper-hot"></i></div>
-                    <h3>Weekend Masala</h3>
+                    <div class="host-photo-container">
+                        <img src="rj_mohini.png" alt="RJ Mohini" class="host-img" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=200&h=200';">
+                        <div class="host-badge-icon"><i class="fa-solid fa-cloud-moon"></i></div>
+                    </div>
+                    <h3>Shaam Suhaani</h3>
                     <div class="show-rj">RJ Mohini</div>
-                    <div class="show-time">05:00 PM - 08:00 PM (Sunday)</div>
+                    <div class="show-time">06:00 PM - 09:00 PM (Daily)</div>
                 </div>
-                <!-- Show 8 (Weekend) -->
+                <!-- Show 5 (Keshav) -->
                 <div class="show-card">
-                    <div class="show-icon"><i class="fa-solid fa-volume-high"></i></div>
-                    <h3>Full Volume Show</h3>
-                    <div class="show-rj">Radio Damroo Special</div>
-                    <div class="show-time">08:00 PM - 11:00 PM (Sat & Sun)</div>
-                </div>
-                <!-- Show 9 (Daily Non-Stop) -->
-                <div class="show-card">
-                    <div class="show-icon"><i class="fa-solid fa-compact-disc"></i></div>
-                    <h3>Non-Stop Music</h3>
-                    <div class="show-rj">DJ Damroo</div>
-                    <div class="show-time">11:00 PM - 12:00 AM (Daily)</div>
+                    <div class="host-photo-container">
+                        <img src="keshav.png" alt="Host Keshav" class="host-img" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200&h=200';">
+                        <div class="host-badge-icon"><i class="fa-solid fa-book-open"></i></div>
+                    </div>
+                    <h3>Ankahi Daastan</h3>
+                    <div class="show-rj">Host Keshav</div>
+                    <div class="show-time">09:00 PM - 12:00 AM (Daily)</div>
                 </div>
             </div>
         </section>
@@ -785,83 +924,131 @@
         <section id="schedule">
             <h2 class="section-title">Show Scheduling</h2>
             <div class="schedule-box">
-                <!-- Everyday Morning -->
-                <div class="schedule-row" id="sch-shouhadra">
-                    <div class="schedule-time"><i class="fa-regular fa-clock"></i> 06:30 - 11:00</div>
-                    <div class="schedule-show">Waah Re Etawah (Everyday)</div>
-                    <div class="schedule-rj">RJ Shouhadra</div>
-                    <div class="schedule-status" id="stat-shouhadra">OFF AIR</div>
+                <!-- Row 1 -->
+                <div class="schedule-row" id="sch-garima">
+                    <div class="schedule-time"><i class="fa-regular fa-clock"></i> 06:00 - 10:00</div>
+                    <div class="schedule-show">Morning Masala</div>
+                    <div class="schedule-rj">Host Garima</div>
+                    <div class="schedule-status" id="stat-garima">OFF AIR</div>
                 </div>
                 <!-- Row 2 -->
-                <div class="schedule-row" id="sch-khushbu">
-                    <div class="schedule-time"><i class="fa-regular fa-clock"></i> 11:00 - 14:00</div>
-                    <div class="schedule-show">The Extraordinary</div>
-                    <div class="schedule-rj">RJ Khushbu</div>
-                    <div class="schedule-status" id="stat-khushbu">OFF AIR</div>
+                <div class="schedule-row" id="sch-harshit">
+                    <div class="schedule-time"><i class="fa-regular fa-clock"></i> 10:00 - 14:00</div>
+                    <div class="schedule-show">Baklol Talks</div>
+                    <div class="schedule-rj">Host Harshit</div>
+                    <div class="schedule-status" id="stat-harshit">OFF AIR</div>
                 </div>
                 <!-- Row 3 -->
-                <div class="schedule-row" id="sch-kapil">
-                    <div class="schedule-time"><i class="fa-regular fa-clock"></i> 14:00 - 17:00</div>
-                    <div class="schedule-show">Dopheri Adda</div>
-                    <div class="schedule-rj">RJ Kapil</div>
-                    <div class="schedule-status" id="stat-kapil">OFF AIR</div>
+                <div class="schedule-row" id="sch-devicious">
+                    <div class="schedule-time"><i class="fa-regular fa-clock"></i> 14:00 - 18:00</div>
+                    <div class="schedule-show">Game On Radio</div>
+                    <div class="schedule-rj">Host Devicious</div>
+                    <div class="schedule-status" id="stat-devicious">OFF AIR</div>
                 </div>
                 <!-- Row 4 -->
-                <div class="schedule-row" id="sch-muskan">
-                    <div class="schedule-time"><i class="fa-regular fa-clock"></i> 17:00 - 20:00</div>
-                    <div class="schedule-show">Jabardast Evening</div>
-                    <div class="schedule-rj">RJ Muskan</div>
-                    <div class="schedule-status" id="stat-muskan">OFF AIR</div>
-                </div>
-                <!-- Row 5 -->
-                <div class="schedule-row" id="sch-mansi">
-                    <div class="schedule-time"><i class="fa-regular fa-clock"></i> 20:00 - 23:00</div>
-                    <div class="schedule-show">Night Cafe (Mon-Fri)</div>
-                    <div class="schedule-rj">RJ Mansi</div>
-                    <div class="schedule-status" id="stat-mansi">OFF AIR</div>
-                </div>
-
-                <!-- Weekend Specials -->
-                <div class="schedule-row" id="sch-komal">
-                    <div class="schedule-time"><i class="fa-regular fa-clock"></i> 11:00 - 17:00</div>
-                    <div class="schedule-show">Komal Nahta Podcast (Sunday)</div>
-                    <div class="schedule-rj">Komal Nahta</div>
-                    <div class="schedule-status" id="stat-komal">OFF AIR</div>
-                </div>
                 <div class="schedule-row" id="sch-mohini">
-                    <div class="schedule-time"><i class="fa-regular fa-clock"></i> 17:00 - 20:00</div>
-                    <div class="schedule-show">Weekend Masala (Sunday)</div>
+                    <div class="schedule-time"><i class="fa-regular fa-clock"></i> 18:00 - 21:00</div>
+                    <div class="schedule-show">Shaam Suhaani</div>
                     <div class="schedule-rj">RJ Mohini</div>
                     <div class="schedule-status" id="stat-mohini">OFF AIR</div>
                 </div>
-                <div class="schedule-row" id="sch-fullvolume">
-                    <div class="schedule-time"><i class="fa-regular fa-clock"></i> 20:00 - 23:00</div>
-                    <div class="schedule-show">Full Volume (Sat & Sun)</div>
-                    <div class="schedule-rj">Radio Damroo Special</div>
-                    <div class="schedule-status" id="stat-fullvolume">OFF AIR</div>
-                </div>
-
-                <!-- Everyday Late Night Non-Stop Music (11:00 PM - 12:00 AM) -->
-                <div class="schedule-row" id="sch-nonstop">
-                    <div class="schedule-time"><i class="fa-regular fa-clock"></i> 23:00 - 00:00</div>
-                    <div class="schedule-show">Non-Stop Music (Everyday)</div>
-                    <div class="schedule-rj">DJ Damroo</div>
-                    <div class="schedule-status" id="stat-nonstop">OFF AIR</div>
+                <!-- Row 5 -->
+                <div class="schedule-row" id="sch-keshav">
+                    <div class="schedule-time"><i class="fa-regular fa-clock"></i> 21:00 - 00:00</div>
+                    <div class="schedule-show">Ankahi Daastan</div>
+                    <div class="schedule-rj">Host Keshav</div>
+                    <div class="schedule-status" id="stat-keshav">OFF AIR</div>
                 </div>
                 
-                <!-- Station Offline Row (12:00 AM - 06:30 AM) -->
+                <!-- Station Offline Row (12:00 AM - 06:00 AM) -->
                 <div class="schedule-row" id="sch-offtime">
-                    <div class="schedule-time"><i class="fa-regular fa-clock"></i> 00:00 - 06:30</div>
-                    <div class="schedule-show">Station Offline (Everyday)</div>
-                    <div class="schedule-rj">Radio Damroo</div>
+                    <div class="schedule-time"><i class="fa-regular fa-clock"></i> 00:00 - 06:00</div>
+                    <div class="schedule-show">Station Offline</div>
+                    <div class="schedule-rj">Dhamaka FM</div>
                     <div class="schedule-status" id="stat-offtime">OFFLINE</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Team Section (Updated with English bios and Social integration) -->
+        <section id="team">
+            <h2 class="section-title">Meet Our Team</h2>
+            <div class="team-grid">
+                <!-- Dev Yadav (Founder & CEO) -->
+                <div class="team-card">
+                    <div class="team-photo-wrapper">
+                        <img src="dev_yadav.png" alt="Dev Yadav" class="team-img" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=200&h=200';">
+                    </div>
+                    <div class="team-name">Dev Yadav</div>
+                    <div class="team-role">Founder & CEO</div>
+                    <p class="team-bio">The visionary founder leading technology strategy, executive administration, and content expansion across the network.</p>
+                    <div class="team-socials">
+                        <a href="https://www.instagram.com/callmee_d3vv?igsh=bmprbnFpZ2FlY3E2" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://wa.me/918958848633" target="_blank" title="WhatsApp Chat"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <!-- RJ Mohini (Co-Founder) -->
+                <div class="team-card">
+                    <div class="team-photo-wrapper">
+                        <img src="rj_mohini.png" alt="RJ Mohini" class="team-img" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=200&h=200';">
+                    </div>
+                    <div class="team-name">RJ Mohini</div>
+                    <div class="team-role">Co-Founder</div>
+                    <p class="team-bio">The energetic leading voice of Dhamaka FM, managing key client relations and creative development projects.</p>
+                    <div class="team-socials">
+                        <a href="#" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                </div>
+
+                <!-- Keshav (Programming Head) -->
+                <div class="team-card">
+                    <div class="team-photo-wrapper">
+                        <img src="keshav.png" alt="Keshav" class="team-img" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200&h=200';">
+                    </div>
+                    <div class="team-name">Keshav</div>
+                    <div class="team-role">Programming Head</div>
+                    <p class="team-bio">Directs daily scheduling formats, show conceptualization, and premium music curation for optimal entertainment.</p>
+                    <div class="team-socials">
+                        <a href="#" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" target="_blank" title="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                    </div>
+                </div>
+
+                <!-- Harshit (Technical & Stream Operations) -->
+                <div class="team-card">
+                    <div class="team-photo-wrapper">
+                        <img src="harshit.png" alt="Harshit" class="team-img" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=200&h=200';">
+                    </div>
+                    <div class="team-name">Harshit</div>
+                    <div class="team-role">Technical & Stream Operations</div>
+                    <p class="team-bio">Manages network servers, optimizes audio streams, and ensures an uninterrupted high-fidelity digital broadcast.</p>
+                    <div class="team-socials">
+                        <a href="#" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                </div>
+
+                <!-- Garima (Creative & PR Director) -->
+                <div class="team-card">
+                    <div class="team-photo-wrapper">
+                        <img src="garima.png" alt="Garima" class="team-img" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=200&h=200';">
+                    </div>
+                    <div class="team-name">Garima</div>
+                    <div class="team-role">Creative & PR Director</div>
+                    <p class="team-bio">Drives online brand presence, media relations, PR campaigns, and handles listener community engagement initiatives.</p>
+                    <div class="team-socials">
+                        <a href="#" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" target="_blank" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- Live Listener Chat / Comments -->
         <section id="comments">
-            <h2 class="section-title">Live Listeners Chat</h2>
+            <h2 class="section-title">Live Listeners Chat Box</h2>
             <div class="comments-container">
                 <form class="comment-form" onsubmit="postListenerComment(event)">
                     <div class="input-group">
@@ -878,7 +1065,7 @@
                 </form>
 
                 <div class="comments-list-wrapper">
-                    <h4 style="margin-bottom: 12px; color: var(--primary-yellow);"><i class="fa-regular fa-comments"></i> Listeners Feed:</h4>
+                    <h4 style="margin-bottom: 12px; color: var(--accent-gold);"><i class="fa-regular fa-comments"></i> Listeners Feed:</h4>
                     <div id="comments-box-list">
                         <!-- Dynamic comments load here -->
                     </div>
@@ -890,16 +1077,15 @@
 
     <!-- Premium Footer -->
     <footer>
-        <p>&copy; 2026 <span>Radio Damroo</span>. Sabhi Adhikar Surakshit Hain. Designed for Etawah Premium Broadcast.</p>
+        <p>&copy; 2026 <span>Dhamaka FM</span>. Sabhi Adhikar Surakshit Hain. Powered by Premium Broadcast Network.</p>
     </footer>
 
     <!-- JAVASCRIPT LOGIC -->
     <script>
-        // --- 1. DYNAMIC REAL-TIME WEEKDAYS & WEEKENDS SCHEDULING ENGINE ---
+        // --- 1. DYNAMIC REAL-TIME DURATION SCHEDULING ENGINE ---
         function updateShowScheduler() {
             try {
                 const now = new Date();
-                const day = now.getDay(); // 0 = Sunday, 1 = Monday, 2 = Tuesday, 3 = Wednesday, 4 = Thursday, 5 = Friday, 6 = Saturday
                 const hours = now.getHours();
                 const minutes = now.getMinutes();
                 const currentTotalMinutes = (hours * 60) + minutes;
@@ -918,150 +1104,72 @@
                 const badgeEl = document.getElementById('live-indicator-badge');
                 const wavesEl = document.getElementById('visualizer-waves');
 
-                // Default State: Station Offline (12:00 AM to 6:30 AM) -> 0 to 390 mins
+                // Default State: Station Offline (12:00 AM to 6:00 AM) -> 0 to 360 mins
                 let activeShow = {
                     show: "Station Offline",
-                    rj: "Radio Damroo",
-                    desc: "Radio Damroo is currently offline. We will meet you at 06:30 AM with our morning energetic show 'Waah Re Etawah'! Till then, take care.",
+                    rj: "Dhamaka FM",
+                    desc: "Dhamaka FM is currently offline. We will meet you at 06:00 AM with our morning energetic show 'Morning Masala'! Till then, stay tuned.",
                     elementId: "sch-offtime",
                     statusId: "stat-offtime",
                     isOffline: true
                 };
 
-                // Everyday morning (6:30 AM to 11:00 AM) -> 390 to 660 mins
-                if (currentTotalMinutes >= 390 && currentTotalMinutes < 660) {
+                // Morning Masala (6:00 AM to 10:00 AM) -> 360 to 600 mins
+                if (currentTotalMinutes >= 360 && currentTotalMinutes < 600) {
                     activeShow = {
-                        show: "Waah Re Etawah",
-                        rj: "RJ Shouhadra",
-                        desc: "Suniye Etawah ka sabse dhasu morning show jo aapki subah ko behad haseen, energetic aur surili bana deta hai! Sirf aur sirf Radio Damroo par.",
-                        elementId: "sch-shouhadra",
-                        statusId: "stat-shouhadra",
+                        show: "Morning Masala",
+                        rj: "Host Garima",
+                        desc: "Apni subah ki shuruat behtareen hits aur energetic Morning Masala show ke sath karein sirf Host Garima ke sath!",
+                        elementId: "sch-garima",
+                        statusId: "stat-garima",
                         isOffline: false
                     };
                 }
                 
-                // SUNDAY SCHEDULE
-                else if (day === 0) {
-                    if (currentTotalMinutes >= 660 && currentTotalMinutes < 1020) {
-                        activeShow = { 
-                            show: "Podcast by Komal Nahta", 
-                            rj: "Komal Nahta", 
-                            desc: "Suniye Bollywood aur entertainment ki ansuni kahaniyan aur behtareen guftagu Komal Nahta ke premium show par Sunday special.", 
-                            elementId: "sch-komal", 
-                            statusId: "stat-komal",
-                            isOffline: false 
-                        };
-                    } else if (currentTotalMinutes >= 1020 && currentTotalMinutes < 1200) {
-                        activeShow = { 
-                            show: "Weekend Masala", 
-                            rj: "RJ Mohini", 
-                            desc: "Aapke Sunday ki shaam ko masaledar aur mazedar banane ke liye hazir hain RJ Mohini dhasu gaano ke sath!", 
-                            elementId: "sch-mohini", 
-                            statusId: "stat-mohini",
-                            isOffline: false 
-                        };
-                    } else if (currentTotalMinutes >= 1200 && currentTotalMinutes < 1380) {
-                        activeShow = { 
-                            show: "Full Volume", 
-                            rj: "Radio Damroo Special", 
-                            desc: "Sunday ki raat ko banaiye musical aur super-hit! Full Volume show me non-stop blasting tracks sirf aapke liye.", 
-                            elementId: "sch-fullvolume", 
-                            statusId: "stat-fullvolume",
-                            isOffline: false 
-                        };
-                    }
-                }
-                
-                // SATURDAY SCHEDULE
-                else if (day === 6) {
-                    if (currentTotalMinutes >= 660 && currentTotalMinutes < 840) {
-                        activeShow = { 
-                            show: "The Extraordinary", 
-                            rj: "RJ Khushbu", 
-                            desc: "Suniye bemisaal aur extraordinary baatein, shandaar music aur interesting kahaniyan RJ Khushbu ke sath Saturday bash me.", 
-                            elementId: "sch-khushbu", 
-                            statusId: "stat-khushbu",
-                            isOffline: false 
-                        };
-                    } else if (currentTotalMinutes >= 840 && currentTotalMinutes < 1020) {
-                        activeShow = { 
-                            show: "Dopheri Adda", 
-                            rj: "RJ Kapil", 
-                            desc: "Kheliye mazedaar games aur suniye dher saari mastiyan, gossips aur superhit songs RJ Kapil ke sath Saturday afternoon me.", 
-                            elementId: "sch-kapil", 
-                            statusId: "stat-kapil",
-                            isOffline: false 
-                        };
-                    } else if (currentTotalMinutes >= 1020 && currentTotalMinutes < 1200) {
-                        activeShow = { 
-                            show: "Jabardast Evening", 
-                            rj: "RJ Muskan", 
-                            desc: "Aapki Saturday ki mast evening ko ekdam jabardast aur energetic banane ke liye hazir hain RJ Muskan!", 
-                            elementId: "sch-muskan", 
-                            statusId: "stat-muskan",
-                            isOffline: false 
-                        };
-                    } else if (currentTotalMinutes >= 1200 && currentTotalMinutes < 1380) {
-                        activeShow = { 
-                            show: "Full Volume", 
-                            rj: "Radio Damroo Special", 
-                            desc: "Saturday ki musical night ko banaiye blasting aur energetic! Non-stop hit tracks ke sath full volume enjoy.", 
-                            elementId: "sch-fullvolume", 
-                            statusId: "stat-fullvolume",
-                            isOffline: false 
-                        };
-                    }
-                }
-                
-                // WEEKDAYS SCHEDULE (Monday to Friday)
-                else {
-                    if (currentTotalMinutes >= 660 && currentTotalMinutes < 840) {
-                        activeShow = { 
-                            show: "The Extraordinary", 
-                            rj: "RJ Khushbu", 
-                            desc: "Suniye bemisaal aur extraordinary baatein, shandaar music aur interesting kahaniyan RJ Khushbu ke sath.", 
-                            elementId: "sch-khushbu", 
-                            statusId: "stat-khushbu",
-                            isOffline: false 
-                        };
-                    } else if (currentTotalMinutes >= 840 && currentTotalMinutes < 1020) {
-                        activeShow = { 
-                            show: "Dopheri Adda", 
-                            rj: "RJ Kapil", 
-                            desc: "Kheliye mazedaar games aur suniye dher saari mastiyan, gossips aur superhit songs RJ Kapil ke sath.", 
-                            elementId: "sch-kapil", 
-                            statusId: "stat-kapil",
-                            isOffline: false 
-                        };
-                    } else if (currentTotalMinutes >= 1020 && currentTotalMinutes < 1200) {
-                        activeShow = { 
-                            show: "Jabardast Evening", 
-                            rj: "RJ Muskan", 
-                            desc: "Aapki thaki-haari shaam ko ekdam jabardast aur energetic banane ke liye hazir hain RJ Muskan!", 
-                            elementId: "sch-muskan", 
-                            statusId: "stat-muskan",
-                            isOffline: false 
-                        };
-                    } else if (currentTotalMinutes >= 1200 && currentTotalMinutes < 1380) {
-                        activeShow = { 
-                            show: "Night Cafe", 
-                            rj: "RJ Mansi", 
-                            desc: "Din bhar ki bhaag-daud aur thakan ke baad, dimag ko behtareen sukoon dene ke liye suniye Night Cafe show RJ Mansi ke sath.", 
-                            elementId: "sch-mansi", 
-                            statusId: "stat-mansi",
-                            isOffline: false 
-                        };
-                    }
+                // Baklol Talks (10:00 AM to 2:00 PM) -> 600 to 840 mins
+                else if (currentTotalMinutes >= 600 && currentTotalMinutes < 840) {
+                    activeShow = {
+                        show: "Baklol Talks",
+                        rj: "Host Harshit",
+                        desc: "Dophar ki thakan aur bore-dom bhulane ke liye suniye non-stop mastiyaan, comedy aur crazy gossips Host Harshit ke sath 'Baklol Talks' mein!",
+                        elementId: "sch-harshit",
+                        statusId: "stat-harshit",
+                        isOffline: false
+                    };
                 }
 
-                // Everyday Late Night Non-Stop Music (11:00 PM - 12:00 AM) -> 1380 to 1440 mins
-                if (currentTotalMinutes >= 1380 && currentTotalMinutes < 1440) {
+                // Game On Radio (2:00 PM to 6:00 PM) -> 840 to 1080 mins
+                else if (currentTotalMinutes >= 840 && currentTotalMinutes < 1080) {
                     activeShow = {
-                        show: "Non-Stop Music",
-                        rj: "DJ Damroo",
-                        desc: "Pure 1 ghante bina kisi ad ya break ke lagatar non-stop superhit gaane suniye sirf Radio Damroo par everyday.",
-                        elementId: "sch-nonstop",
-                        statusId: "stat-nonstop",
+                        show: "Game On Radio",
+                        rj: "Host Devicious",
+                        desc: "Suniye dynamic gaming buzz, sports trivia aur energetic superhit remixes Host Devicious ke sath 'Game On Radio' mein!",
+                        elementId: "sch-devicious",
+                        statusId: "stat-devicious",
+                        isOffline: false
+                    };
+                }
+
+                // Shaam Suhaani (6:00 PM to 9:00 PM) -> 1080 to 1260 mins
+                else if (currentTotalMinutes >= 1080 && currentTotalMinutes < 1260) {
+                    activeShow = {
+                        show: "Shaam Suhaani",
+                        rj: "RJ Mohini",
+                        desc: "Apni rangeen aur suhaani shaam ko banaiye aur bhi khubsoorat aur relax. RJ Mohini lekar aayi hain behtareen melodies aur pyari baatein.",
+                        elementId: "sch-mohini",
+                        statusId: "stat-mohini",
+                        isOffline: false
+                    };
+                }
+
+                // Ankahi Daastan (9:00 PM to 12:00 AM) -> 1260 to 1440 mins
+                else if (currentTotalMinutes >= 1260 && currentTotalMinutes < 1440) {
+                    activeShow = {
+                        show: "Ankahi Daastan",
+                        rj: "Host Keshav",
+                        desc: "Suniye behtareen dilchasp ansuni kahaniyan, emotional shyaari aur peaceful music Host Keshav ke sath late-night 'Ankahi Daastan' mein.",
+                        elementId: "sch-keshav",
+                        statusId: "stat-keshav",
                         isOffline: false
                     };
                 }
@@ -1130,9 +1238,9 @@
                 time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
             };
 
-            let comments = localStorage.getItem('damroo_l_chats') ? JSON.parse(localStorage.getItem('damroo_l_chats')) : [];
+            let comments = localStorage.getItem('dhamaka_l_chats') ? JSON.parse(localStorage.getItem('dhamaka_l_chats')) : [];
             comments.unshift(newComment);
-            localStorage.setItem('damroo_l_chats', JSON.stringify(comments.slice(0, 30)));
+            localStorage.setItem('dhamaka_l_chats', JSON.stringify(comments.slice(0, 30)));
 
             msgField.value = "";
             renderChatsList();
@@ -1142,14 +1250,14 @@
             const chatBox = document.getElementById('comments-box-list');
             if (!chatBox) return;
 
-            let comments = localStorage.getItem('damroo_l_chats') ? JSON.parse(localStorage.getItem('damroo_l_chats')) : [];
+            let comments = localStorage.getItem('dhamaka_l_chats') ? JSON.parse(localStorage.getItem('dhamaka_l_chats')) : [];
 
             if (comments.length === 0) {
                 comments = [
-                    { name: "Aman Dixit", msg: "Jabardast Evening show ekdam dhasu hai, RJ Muskan rock!", time: "05:40 PM" },
-                    { name: "Nisha Dixit", msg: "Radio Damroo pure UP me sabse shaandar digital radio station hai.", time: "01:20 PM" }
+                    { name: "Dev Yadav", msg: "Welcome to Dhamaka FM listeners! Drop your song requests here.", time: "09:05 AM" },
+                    { name: "Nisha Sen", msg: "Baklol Talks show me boht maza aaya, Harshit bhai super entertaining ho!", time: "11:20 AM" }
                 ];
-                localStorage.setItem('damroo_l_chats', JSON.stringify(comments));
+                localStorage.setItem('dhamaka_l_chats', JSON.stringify(comments));
             }
 
             chatBox.innerHTML = comments.map(c => `
@@ -1161,7 +1269,7 @@
             `).join('');
         }
 
-        // --- 4. ENGINE INIT & CASTER EMBED FALLBACK DETECTOR ---
+        // --- ENGINE INIT & CASTER EMBED FALLBACK DETECTOR ---
         window.addEventListener('DOMContentLoaded', () => {
             updateShowScheduler();
             renderChatsList();
@@ -1189,3 +1297,4 @@
     </script>
 </body>
 </html>
+       
