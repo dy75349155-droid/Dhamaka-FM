@@ -375,7 +375,7 @@
             margin-bottom: 12px;
         }
 
-        /* --- Shows Section Upgraded with Host Photos --- */
+        /* --- Shows Section restored with Stickers/Icons --- */
         .show-card {
             background: var(--card-black);
             border: 1px solid rgba(255,255,255,0.05);
@@ -409,43 +409,18 @@
             opacity: 1;
         }
 
-        /* Premium Team / Host Photo Container */
-        .host-photo-container {
-            width: 100px;
-            height: 100px;
-            margin: 0 auto 15px;
-            position: relative;
-            border-radius: 50%;
-            padding: 4px;
-            background: linear-gradient(135deg, var(--primary-violet), var(--primary-magenta));
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-        }
-
-        .host-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 50%;
-            border: 2px solid var(--card-black);
-            display: block;
-        }
-
-        /* Badge overlay showing show category icon */
-        .host-badge-icon {
-            position: absolute;
-            bottom: 2px;
-            right: 2px;
-            width: 30px;
-            height: 30px;
-            background: var(--accent-gold);
-            color: var(--bg-black);
+        .show-icon {
+            width: 55px;
+            height: 55px;
+            background: rgba(139, 92, 246, 0.1);
+            border: 2px solid var(--primary-violet);
+            color: var(--primary-violet);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 13px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-            border: 2px solid var(--card-black);
+            font-size: 22px;
+            margin: 0 auto 12px;
         }
 
         .show-card h3 {
@@ -863,56 +838,41 @@
             </div>
         </section>
 
-        <!-- Shows Section with Host Photos -->
+        <!-- Shows Section restored with original stickers/icons instead of photos -->
         <section id="shows">
             <h2 class="section-title">Dhamaka FM Super Hit Shows</h2>
             <div class="grid-layout">
-                <!-- Show 1 (Garima) -->
+                <!-- Show 1 -->
                 <div class="show-card">
-                    <div class="host-photo-container">
-                        <img src="garima.png" alt="Host Garima" class="host-img" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=200&h=200';">
-                        <div class="host-badge-icon"><i class="fa-solid fa-mug-hot"></i></div>
-                    </div>
+                    <div class="show-icon"><i class="fa-solid fa-mug-hot"></i></div>
                     <h3>Morning Masala</h3>
                     <div class="show-rj">Host Garima</div>
                     <div class="show-time">06:00 AM - 10:00 AM (Daily)</div>
                 </div>
-                <!-- Show 2 (Harshit) -->
+                <!-- Show 2 -->
                 <div class="show-card">
-                    <div class="host-photo-container">
-                        <img src="harshit.png" alt="Host Harshit" class="host-img" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=200&h=200';">
-                        <div class="host-badge-icon"><i class="fa-solid fa-comments"></i></div>
-                    </div>
+                    <div class="show-icon"><i class="fa-solid fa-comments"></i></div>
                     <h3>Baklol Talks</h3>
                     <div class="show-rj">Host Harshit</div>
                     <div class="show-time">10:00 AM - 02:00 PM (Daily)</div>
                 </div>
-                <!-- Show 3 (Devicious) -->
+                <!-- Show 3 -->
                 <div class="show-card">
-                    <div class="host-photo-container">
-                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=200&h=200" alt="Host Devicious" class="host-img" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&q=80&w=200&h=200';">
-                        <div class="host-badge-icon"><i class="fa-solid fa-gamepad"></i></div>
-                    </div>
+                    <div class="show-icon"><i class="fa-solid fa-gamepad"></i></div>
                     <h3>Game On Radio</h3>
                     <div class="show-rj">Host Devicious</div>
                     <div class="show-time">02:00 PM - 06:00 PM (Daily)</div>
                 </div>
-                <!-- Show 4 (Mohini) -->
+                <!-- Show 4 -->
                 <div class="show-card">
-                    <div class="host-photo-container">
-                        <img src="rj_mohini.png" alt="RJ Mohini" class="host-img" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=200&h=200';">
-                        <div class="host-badge-icon"><i class="fa-solid fa-cloud-moon"></i></div>
-                    </div>
+                    <div class="show-icon"><i class="fa-solid fa-cloud-moon"></i></div>
                     <h3>Shaam Suhaani</h3>
                     <div class="show-rj">RJ Mohini</div>
                     <div class="show-time">06:00 PM - 09:00 PM (Daily)</div>
                 </div>
-                <!-- Show 5 (Keshav) -->
+                <!-- Show 5 -->
                 <div class="show-card">
-                    <div class="host-photo-container">
-                        <img src="keshav.png" alt="Host Keshav" class="host-img" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200&h=200';">
-                        <div class="host-badge-icon"><i class="fa-solid fa-book-open"></i></div>
-                    </div>
+                    <div class="show-icon"><i class="fa-solid fa-book-open"></i></div>
                     <h3>Ankahi Daastan</h3>
                     <div class="show-rj">Host Keshav</div>
                     <div class="show-time">09:00 PM - 12:00 AM (Daily)</div>
@@ -997,8 +957,7 @@
                     <div class="team-role">Co-Founder</div>
                     <p class="team-bio">The energetic leading voice of Dhamaka FM, managing key client relations and creative development projects.</p>
                     <div class="team-socials">
-                        <a href="#" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://www.instagram.com/rjmohiniofficial?igsh=MWQ5YjJrMTdtYmw2MA==" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
                     </div>
                 </div>
 
@@ -1011,8 +970,8 @@
                     <div class="team-role">Programming Head</div>
                     <p class="team-bio">Directs daily scheduling formats, show conceptualization, and premium music curation for optimal entertainment.</p>
                     <div class="team-socials">
-                        <a href="#" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#" target="_blank" title="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/__heydevil__?igsh=MXVzbW01d3V5bGs2cA==" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://wa.me/917310806397" target="_blank" title="WhatsApp Chat"><i class="fa-brands fa-whatsapp"></i></a>
                     </div>
                 </div>
 
@@ -1025,8 +984,8 @@
                     <div class="team-role">Technical & Stream Operations</div>
                     <p class="team-bio">Manages network servers, optimizes audio streams, and ensures an uninterrupted high-fidelity digital broadcast.</p>
                     <div class="team-socials">
-                        <a href="#" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://www.instagram.com/har_xshitt?igsh=a3hhMGZuMXJiMDhh" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://wa.me/918739013084" target="_blank" title="WhatsApp Chat"><i class="fa-brands fa-whatsapp"></i></a>
                     </div>
                 </div>
 
@@ -1039,8 +998,7 @@
                     <div class="team-role">Creative & PR Director</div>
                     <p class="team-bio">Drives online brand presence, media relations, PR campaigns, and handles listener community engagement initiatives.</p>
                     <div class="team-socials">
-                        <a href="#" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#" target="_blank" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/garimaa_2999?igsh=Yzh5ZXU2cjR2cXlx" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
                     </div>
                 </div>
             </div>
@@ -1297,4 +1255,3 @@
     </script>
 </body>
 </html>
-       
